@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .red-color {
+            color: red;
+        }
+        
+        .text-align-center {
+            text-align: center;
+        }
+        
+        .header-details {
+            float: right;
+        }
+        
+        p {
+            margin-bottom: 5px;
+        }
+        
+        .pdf-header {
+            background-color: #f2f2f2;
+            margin-bottom: 30px;
+        }
+        
+        .table td {
+            padding: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="text-align-center red-color "> Sri Land Motor Engineering Works </h1>
+            <p class="text-align-center">VEHICLE VALUERS AND DEALERS IN MOTOR SPARE PARTS ,PALAM HANDIYA, HASALAKA</p>
+            <p class="text-align-center">T.P NO 0775568114</p>
+            <p class="text-align-center">e-mail: asokabiz@yahoo.com</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Name: <span contenteditable="true"><b>D Marapana</b></span></p>
+                    <p>Openion Provided To: <span contenteditable="true"><b>{{ $valuation->openionProvidedTo->name }}</b></span></p>
+                    <p>Address: <span contenteditable="true"><b>Mahiyanganaya</b></span></p>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="header-details">
+                        <p>Report No: <span contenteditable="true"><b>{{$valuation->id}}</b></span></p>
+                        <p>Inspection Date: <span contenteditable="true"><b>13 Aug 2020</b></span></p>
+                        <p>Inspected By: <span contenteditable="true"><b>G Malwathugoda</b></span></p>
+                        <p>Inspection Place: <span contenteditable="true"><b>Sri Land Hasalaka</b></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="col-md-12">
+                <h3 class="text-align-center">Vehicle Indentification Details</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td>Reg Number</td>
+                            <td contenteditable="true">{{$vehicle->rego}}</td>
+                        </tr>
+                        <tr>
+                            <td>Road Test</td>
+                            <td contenteditable="true">{{$valuation->if_road_test}}</td>
+                        </tr>
+                        <tr>
+                            <td>Manufacture Year</td>
+                            <td contenteditable="true">{{$vehicle->manufactureYear->year}}</td>
+                        </tr>
+                        <tr>
+                            <td>Country of Origin</td>
+                            <td contenteditable="true">{{$vehicle->country_id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Fuel System</td>
+                            <td contenteditable="true">{{$vehicle->fuel_system_id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Register Date</td>
+                            <td contenteditable="true">{{$vehicle->register_date}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-md-6">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td>Voltage</td>
+                            <td contenteditable="true">{{$vehicle->voltage}}</td>
+                        </tr>
+                        <tr>
+                            <td>Colour</td>
+                            <td contenteditable="true">{{$valuation->color}}</td>
+                        </tr>
+                        <tr>
+                            <td>Odometer Reading</td>
+                            <td contenteditable="true">{{$valuation->odometer_reading}}</td>
+                        </tr>
+                        <tr>
+                            <td>Weight Unlauden</td>
+                            <td contenteditable="true">{{$vehicle->weight_unloaden}}</td>
+                        </tr>
+                        <tr>
+                            <td>Transmission</td>
+                            <td contenteditable="true">{{$vehicle->transmission}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tyre Size Front</td>
+                            <td contenteditable="true">{{$valuation->tyre_size_front}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td>Weight Gross</td>
+                            <td contenteditable="true">dummy</td>
+                        </tr>
+                        <tr>
+                            <td>Transmission Type</td>
+                            <td contenteditable="true">{{$vehicle->transmission_type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tyre Size Rear</td>
+                            <td contenteditable="true">{{$valuation->tyre_size_back}}</td>
+                        </tr>
+                        <tr>
+                            <td>Rear Wheel Type</td>
+                            <td contenteditable="true">{{$vehicle->rear_wheel_type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Roof Type</td>
+                            <td contenteditable="true">{{$vehicle->roof_type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Spare Tyre</td>
+                            <td contenteditable="true">{{$valuation->if_spare_tyre_available}}</td>
+                        </tr>
+                        <tr>
+                            <td>Switch Key</td>
+                            <td contenteditable="true">{{$vehicle->switch_key}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-md-6">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td>Drive Type</td>
+                            <td contenteditable="true">{{$vehicle->drive_type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Doors</td>
+                            <td contenteditable="true">{{$vehicle->doors}}</td>
+                        </tr>
+                        <tr>
+                            <td>Parts Availability</td>
+                            <td contenteditable="true">{{$valuation->if_spare_tyre_available}}</td>
+                        </tr>
+                        <tr>
+                            <td>Engine Capacity</td>
+                            <td contenteditable="true">{{$vehicle->engine_capacity}}</td>
+                        </tr>
+                        <tr>
+                            <td>Seating Capacity</td>
+                            <td contenteditable="true">{{$vehicle->seating_capacity}}</td>
+                        </tr>
+                        <tr>
+                            <td>CR Compliance</td>
+                            <td contenteditable="true">{{$valuation->if_cr_complaince}}</td>
+                        </tr>
+                        <tr>
+                            <td>Import Condition</td>
+                            <td contenteditable="true">{{$vehicle->if_brand_new_import_condition}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                {{-- For DOMPDF --}} {{-- <img src="{{public_path().'storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_1}}" alt="{{$valuation->image_1}}" width="200" height="auto"> --}} {{-- For Normal Blade --}}
+                <div class="col-md-3">
+                    <img src="{{url('storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_1)}}" alt="{{$valuation->image_1}}" width="200" height="auto">
+                </div>
+                <div class="col-md-3">
+                    <img src="{{url('storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_2)}}" alt="{{$valuation->image_2}}" width="200" height="auto">
+                </div>
+                <div class="col-md-3">
+                    <img src="{{url('storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_3)}}" alt="{{$valuation->image_3}}" width="200" height="auto">
+                </div>
+                <div class="col-md-3">
+                    <img src="{{url('storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_4)}}" alt="{{$valuation->image_4}}" width="200" height="auto">
+                </div>
+            </div>
+            <!-- <div class="row">
+            <div class="col-md-3">
+                <img src="{{public_path().'storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_5}}" alt="{{$valuation->image_5}}" width="200" height="auto">
+            </div>
+            <div class="col-md-3">
+                <img src="{{public_path().'storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_6}}" alt="{{$valuation->image_6}}" width="200" height="auto">
+            </div>
+            <div class="col-md-3">
+                <img src="{{public_path().'storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_7}}" alt="{{$valuation->image_7}}" width="200" height="auto">
+            </div>
+            <div class="col-md-3">
+                <img src="{{public_path().'storage/'.$vehicle->rego.'/'.$valuation->id.'/'.$valuation->image_8}}" alt="{{$valuation->image_8}}" width="200" height="auto">
+            </div>
+        </div> -->
+
+            <div class="col-md-12">
+                <h3 class="text-align-center">Technical Evaluation</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td>Overall Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->overall]->name}}</td>
+                            <td>Body Cindition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->body]->name}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Engine Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->engine]->name}}</td>
+                            <td>Gearbox Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->gearbox_condition]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Paint Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->paint]->name}}</td>
+                            <td>Charging System</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->charging_system]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Clutch Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->clutch]->name}}</td>
+                            <td>Interior Condition</td>
+                            <td contenteditable="true">----</td>
+                        </tr>
+                        <tr>
+                            <td>Battery Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->battery]->name}}</td>
+                            <td>Steering System</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->steering_system]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Uphostring Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->uphostring]->name}}</td>
+                            <td>Head / Parking Lights</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->head_parking_lights]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Dashboard Electrical</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->dashboard_electrical]->name}}</td>
+                            <td>Suspension System</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->suspension_system]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Starting System</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->starting_system]->name}}</td>
+                            <td>Chassis Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->chassis]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Other Electrical</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->other_electrical]->name}}</td>
+                            <td>Front Type Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->front_tyre]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Cooling System</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->cooling_system]->name}}</td>
+                            <td>Brakes foot</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->breaks_foot]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Rear type Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->rear_tyre_condition]->name}}</td>
+                            <td>Windscreen Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->windscreen]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Hand Brake</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->breaks_hand]->name}}</td>
+                            <td>Spare tyre Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->spare_tyre_condition]->name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Window Condition</td>
+                            <td contenteditable="true">{{$conditionNames[$valuation->condition->window]->name}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td>Transmission Details:</td>
+                            <td contenteditable="true">--------------</td>
+                        </tr>
+                        <tr>
+                            <td>Other options available:</td>
+                            <td contenteditable="true">--------------</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Special Comments:</td>
+                            <td contenteditable="true">------------</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Declaration by supplier</h4>
+                    I hereby declare and affirm that i am the current owner of the vehicle. The details indicated above which were provided by me is true to the best of my knowledge.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td>Signature of Vendor:</td>
+                            <td contenteditable="true">-----</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td>Market Value:</td>
+                            <td contenteditable="true">Rs. +{{number_format($valuation->market_value, 2, '.', ',')}}</td>
+                            <td contenteditable="true">{{$mktValueInWords}} RUPEES ONLY</td>
+                            <tr>
+                                <td>Forced Value:</td>
+                                <td contenteditable="true">Rs. +{{number_format($valuation->forced_value, 2, '.', ',')}}</td>
+                                <td contenteditable="true">{{$frcdValueInWords}} RUPEES ONLY</td>
+                            </tr>
+
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <p><b>*The above valued prices are inclusive of vat</b></p>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Declaration by valuer</h4>
+                    <p> I hereby confirm that the information stated above is correct, as per inspections made by myself, to the best of my knowledge. I have given the above valuation after considering all relavant factors, which affect the value of the vehicle,
+                        to the best of my knowledge.
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <table class="table table-bordered" id="content">
+                        <tr>
+                            <td contenteditable="true">Valuation By</td>
+                            <td contenteditable="true">{{$valuation->valued_by??$currentUser}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
